@@ -12,7 +12,7 @@ if __name__=='__main__':
     infile = sys.argv[1]
     predictions = pd.read_csv(infile)
     predictions.set_index('SalesID')
-    test_solution = pd.read_csv('data/do_not_open/test_soln.csv')
+    test_solution = pd.read_csv('data/test_soln.csv')
     test_solution.set_index('SalesID')
     c = RMLSEComparer(test_solution.SalePrice)
-    c.report_to_slack(predictions.SalePrice)
+   
